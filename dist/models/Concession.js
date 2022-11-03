@@ -15,7 +15,11 @@ Concession.init({
     },
     name: {
         type: sequelize_1.DataTypes.STRING(40),
-        allowNull: false
+        allowNull: false,
+        validate: {
+            max: 39,
+            is: /^[a-zA-Z\d\-'\s]+$/i
+        }
     },
     siret: {
         type: sequelize_1.DataTypes.CHAR(12),

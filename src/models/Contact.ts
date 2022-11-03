@@ -19,11 +19,19 @@ Contact.init({
     },
     lastname: {
         type: DataTypes.STRING(39),
-        allowNull: false
+        allowNull: false,
+        validate: {
+            max: 39,
+            is: /^[a-zA-Z\d\-'\s]+$/i
+        }
     },
     firstname: {
         type: DataTypes.STRING(39),
-        allowNull: true
+        allowNull: true,
+        validate: {
+            max: 39,
+            is: /^[a-zA-Z\d\-'\s]+$/i
+        }
     },
     mail: {
         type: DataTypes.STRING(150),

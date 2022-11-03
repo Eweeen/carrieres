@@ -18,11 +18,19 @@ User.init({
     },
     firstname: {
         type: DataTypes.STRING(39),
-        allowNull: false
+        allowNull: false,
+        validate: {
+            max: 39,
+            is: /^[a-zA-Z\d\-'\s]+$/i
+        }
     },
     lastname: {
         type: DataTypes.STRING(39),
-        allowNull: false
+        allowNull: false,
+        validate: {
+            max: 39,
+            is: /^[a-zA-Z\d\-'\s]+$/i
+        }
     },
     mail: {
         type: DataTypes.STRING(150),

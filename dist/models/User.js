@@ -14,11 +14,19 @@ User.init({
     },
     firstname: {
         type: sequelize_1.DataTypes.STRING(39),
-        allowNull: false
+        allowNull: false,
+        validate: {
+            max: 39,
+            is: /^[a-zA-Z\d\-'\s]+$/i
+        }
     },
     lastname: {
         type: sequelize_1.DataTypes.STRING(39),
-        allowNull: false
+        allowNull: false,
+        validate: {
+            max: 39,
+            is: /^[a-zA-Z\d\-'\s]+$/i
+        }
     },
     mail: {
         type: sequelize_1.DataTypes.STRING(150),
